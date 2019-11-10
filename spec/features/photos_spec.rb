@@ -489,7 +489,7 @@ describe "/photos/[ID]" do
 
     visit "/photos/#{photo.id}"
     
-    expect(page).to have_css("textarea", count: 1)
+    expect(page).to have_css("textarea", minimum: 1)
 
     expect(page).to have_content(test_caption)
   end
