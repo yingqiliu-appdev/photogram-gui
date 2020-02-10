@@ -13,6 +13,7 @@ gem 'activeadmin', '2.2.0'
 gem 'devise'
 gem 'http'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem "rack-timeout", require: "rack/timeout/base"
 
 group :development, :test do
   gem 'awesome_print'
