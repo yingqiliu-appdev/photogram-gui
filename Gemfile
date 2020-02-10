@@ -27,8 +27,6 @@ group :development, :test do
   gem 'web_git', github: 'firstdraft/web_git'
 end
 
-gem 'rack-timeout', require: 'rack/timeout/base'
-
 group :development do
   gem 'annotate', '< 3.0.0' 
   gem 'better_errors'
