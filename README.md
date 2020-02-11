@@ -35,3 +35,4 @@ In this project, you will add a GUI on top of the queries we previously built.
     This lets the browser know which label belongs to which input, which helps with [accessibility](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/What_is_accessibility), ergonomics, SEO, and most importantly for you right now — automated tests.
  - I added some validations to try and help prevent bogus data from entering your tables. Check them out in your models.
  - Don't be alarmed by the number of automated tests. Most of them are there as hints to help you structure your forms correctly.
+ - It's okay to View Source on the target to get hints on what HTML we used.
