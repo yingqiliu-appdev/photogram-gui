@@ -1,14 +1,29 @@
 # Photogram GUI
 
-In this project, you will add a GUI on top of the API we previously built.
+In this project, you will add a GUI on top of the queries we previously built.
 
-Click "Start web server" and visit your "Live app". The starting point is the ending point of the API project. You ought to already have data.
+### [Here's your target.](http://photogram-gui.matchthetarget.com/)
 
-[This is your new target.](https://photogram-gui.matchthetarget.com/) It's still a little ugly, but it's step on the path. Next week we'll add dropdowns, sign in/sign out, and CSS to polish it up.
+ - A list of users.
+   - A form to add a new user.
+ - A details page for a user.
+   - A form to edit a user.
+   - A list of the user's own photos.
+ - A list of photos.
+   - A form to add a new photo.
+ - A details page for a photo.
+   - A form to edit a photo.
+   - A link to delete a photo.
+   - A comment section.
+   - A form to add a new comment.
 
-Users should be able to see a lists of users, photos, links to details pages, links to delete, and forms to add.
+## Standard Workflow
 
-Things to keep in mind:
+ 1. Start the web server: `bin/server`
+ 1. As often as you like, reset your database with dummy data: `rails dev:prime`
+ 1. Run `rails grade` as often as you like to see how you are doing, but **make sure you test your app manually first to make sure it matches the target's behavior first**.
+
+## Things to keep in mind
 
  - When you make forms, don't forget to add a `<label>` for every form control (`<input>`, `<textarea>`, etc). The `<label>` should have a `for=""` attribute that matches the `id=""` attribute of the input. For example,
 
@@ -19,12 +34,4 @@ Things to keep in mind:
 
     This lets the browser know which label belongs to which input, which helps with [accessibility](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/What_is_accessibility), ergonomics, SEO, and most importantly for you right now — automated tests.
  - I added some validations to try and help prevent bogus data from entering your tables. Check them out in your models.
-
-## Standard Workflow
-
- 1. Add dummy data: `rails dev:prime`
- 1. Start the web server by running `bin/server` in a Terminal.
- 1. Navigate to your live application preview.
- 1. As you work, remember to navigate to `/git` and **commit often as you work.**
- 1. Make new branches freely to experiment! _Especially_ before starting on a new task.
- 1. Run `rails grade` as often as you like to see how you are doing, but **make sure you test your app manually first to make sure it matches the target's behavior first**.
+ - Don't be alarmed by the number of automated tests. Most of them are there as hints to help you structure your forms correctly.
