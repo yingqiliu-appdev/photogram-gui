@@ -21,7 +21,7 @@ In this project, you will add a GUI on top of the queries we previously built.
 
  1. Start the web server: `bin/server`
  1. As often as you like, reset your database with dummy data: `rails dev:prime`
- 1. Run `rails grade` as often as you like to see how you are doing, but **make sure you test your app manually first to make sure it matches the target's behavior first**.
+ 2. Run `rails grade` as often as you like to see how you are doing, but **test your app manually first to make sure it matches the target's behavior**.
 
 ## Things to keep in mind
 
