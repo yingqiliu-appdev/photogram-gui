@@ -2,16 +2,16 @@
 
 In this project, you will add a GUI on top of the queries we previously built.
 
-### [Here's your target.](http://photogram-gui.matchthetarget.com/)
+### [Here's your target.](https://photogram-gui.matchthetarget.com/)
 
- - A list of users.
+ - A list of users (at `/users`).
    - A form to add a new user.
- - A details page for a user.
+ - A details page for a user (at `/users/[ID NUMBER]`).
    - A form to edit a user.
    - A list of the user's own photos.
- - A list of photos.
+ - A list of photos (at `/photos`).
    - A form to add a new photo.
- - A details page for a photo.
+ - A details page for a photo (at `/photos/[ID NUMBER]`).
    - A form to edit a photo.
    - A link to delete a photo.
    - A comment section.
