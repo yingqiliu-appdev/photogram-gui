@@ -11,4 +11,7 @@
 #
 
 class FollowRequest < ApplicationRecord
+  validates(:sender_id, { :presence => true})
+  validates(:recipient_id, { :presence => true})
+
 end

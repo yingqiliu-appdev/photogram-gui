@@ -12,7 +12,7 @@ describe "/photos" do
   it "has a form", :points => 1 do
     visit "/photos"
 
-    expect(page).to have_css("form", count: 1)
+    expect(page).to have_css("form", minimum: 1)
   end
 end
 
@@ -28,7 +28,7 @@ describe "/photos" do
   it "has two input elements (one for image and owner id)", :points => 1, hint: h("label_for_input") do
     visit "/photos"
 
-    expect(page).to have_css("input", count: 2)
+    expect(page).to have_css("input", minimum: 2)
   end
 end
 
@@ -44,7 +44,7 @@ describe "/photos" do
   it "has one textarea element (for Caption)", :points => 1, hint: h("label_for_input") do
     visit "/photos"
 
-    expect(page).to have_css("textarea", count: 1)
+    expect(page).to have_css("textarea", minimum: 1)
   end
 end
 
@@ -339,7 +339,7 @@ describe "/photos/[ID]" do
 end
 
 describe "/photos/[ID]" do
-  it "has all required forms (For New Like, Edit Photo, and New Comment)", :points => 1 do
+  it "has all required forms (Edit Photo and New Comment)", :points => 1 do
 
     test_image = "https://some.test/image-#{Time.now.to_i}.jpg"
     test_caption = "Some test caption #{Time.now.to_i}"
@@ -356,7 +356,7 @@ describe "/photos/[ID]" do
 
     visit "/photos/#{photo.id}"
 
-    expect(page).to have_css("form", minimum: 3)
+    expect(page).to have_css("form", minimum: 2)
   end
 end
 
@@ -570,142 +570,6 @@ describe "/photos/[ID]" do
 
     visit "/photos/#{photo.id}"
     click_on "Update photo"
-
-    expect(page).to have_current_path("/photos/#{photo.id}")
-  end
-end
-
-describe "/photos/[ID] — Add fan form" do
-  it "has a label with text 'Author ID'", :points => 1, hint: h("copy_must_match label_for_input") do
-
-    test_image = "https://some.test/image-#{Time.now.to_i}.jpg"
-    test_caption = "Some test caption #{Time.now.to_i}"
-
-    user = User.new
-    user.username = "BagelFace"
-    user.save
-    
-    photo = Photo.new
-    photo.image = test_image
-    photo.caption = test_caption
-    photo.owner_id = user.id
-    photo.save
-
-    visit "/photos/#{photo.id}"
-
-    expect(page).to have_css("label", text: "Author ID")
-  end
-end
-
-describe "/photos/[ID] — Add fan form" do
-  it "hides an input that is prepopulated with the photo's ID", :points => 0 do
-
-    test_image = "https://some.test/image-#{Time.now.to_i}.jpg"
-    test_caption = "Some test caption #{Time.now.to_i}"
-
-    user = User.new
-    user.username = "BagelFace"
-    user.save
-
-    photo = Photo.new
-    photo.image = test_image
-    photo.caption = test_caption
-    photo.owner_id = user.id
-    photo.save
-
-    visit "/photos/#{photo.id}"
-
-    expect(page).to have_css("input[value='#{photo.id}']", visible: false)
-  end
-end
-
-describe "/photos/[ID] — Add fan form" do
-  it "has a button with text 'Add fan'", :points => 1 do
-
-    test_image = "https://some.test/image-#{Time.now.to_i}.jpg"
-    test_caption = "Some test caption #{Time.now.to_i}"
-
-    user = User.new
-    user.username = "BagelFace"
-    user.save
-
-    photo = Photo.new
-    photo.image = test_image
-    photo.caption = test_caption
-    photo.owner_id = user.id
-    photo.save
-
-    visit "/photos/#{photo.id}"
-
-    expect(page).to have_css("button", text: "Add fan")
-  end
-end
-
-describe "/photos/[ID] — Add fan form" do
-  it "creates a Like between a User and the current Photo", :points => 3 do
-
-    test_image = "https://some.test/image-#{Time.now.to_i}.jpg"
-    test_caption = "Some test caption #{Time.now.to_i}"
-
-    user = User.new
-    user.username = "BagelFace"
-    user.save
-
-    photo = Photo.new
-    photo.image = test_image
-    photo.caption = test_caption
-    photo.owner_id = user.id
-    photo.save
-
-    first_other_user = User.new
-    first_other_user.username = "bob_#{Time.now.to_i}"
-    first_other_user.save
-
-    second_other_user = User.new
-    second_other_user.username = "carol_#{Time.now.to_i}"
-    second_other_user.save
-
-    visit "/photos/#{photo.id}"
-
-    fill_in "Fan ID", with: second_other_user.id
-
-    click_on "Add fan"
-
-    new_like = Like.find_by(photo_id: photo.id, fan_id: second_other_user.id)
-
-    expect(new_like).to_not be_nil
-  end
-end
-
-describe "/photos/[ID] — Add fan form" do
-  it "redirects to /photos/[ID] when submitted", :points => 1 do
-
-    test_image = "https://some.test/image-#{Time.now.to_i}.jpg"
-    test_caption = "Some test caption #{Time.now.to_i}"
-
-    user = User.new
-    user.username = "BagelFace"
-    user.save
-
-    photo = Photo.new
-    photo.image = test_image
-    photo.caption = test_caption
-    photo.owner_id = user.id
-    photo.save
-
-    first_other_user = User.new
-    first_other_user.username = "bob_#{Time.now.to_i}"
-    first_other_user.save
-
-    second_other_user = User.new
-    second_other_user.username = "carol_#{Time.now.to_i}"
-    second_other_user.save
-
-    visit "/photos/#{photo.id}"
-
-    fill_in "Author ID", with: second_other_user.id
-
-    click_on "Add fan"
 
     expect(page).to have_current_path("/photos/#{photo.id}")
   end

@@ -10,4 +10,5 @@
 #
 
 class Like < ApplicationRecord
+  validates(:fan_id, { :presence => true})
 end
