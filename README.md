@@ -6,7 +6,7 @@ In this project, you will add a GUI on top of the queries we previously built.
 
  - A list of users (at `/users`).
    - A form to add a new user.
- - A details page for a user (at `/users/[ID NUMBER]`).
+ - A details page for a user (at `/users/[USERNAME]`).
    - A form to edit a user.
    - A list of the user's own photos.
  - A list of photos (at `/photos`).
