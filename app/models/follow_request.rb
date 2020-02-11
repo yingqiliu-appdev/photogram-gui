@@ -11,7 +11,14 @@
 #
 
 class FollowRequest < ApplicationRecord
-  validates(:sender_id, { :presence => true})
-  validates(:recipient_id, { :presence => true})
+  validates(:sender, { :presence => true})
+  validates(:recipient, { :presence => true})
 
+  def sender
+    return User.where({ :id => self.sender_id }).at(0)
+  end
+
+  def recipient
+    return User.where({ :id => self.recipient_id }).at(0)
+  end
 end

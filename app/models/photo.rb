@@ -13,7 +13,6 @@
 #
 
 class Photo < ApplicationRecord
-
   validates(:poster, {:presence => true })
 
   def poster
