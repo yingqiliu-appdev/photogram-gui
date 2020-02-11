@@ -6,6 +6,7 @@ ruby '2.6.5'
 gem 'rails', '~> 6.0.0'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5'
+gem 'webpacker', '~> 4.0'
 gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 
@@ -45,6 +46,7 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'rspec-html-matchers'
   gem 'rspec-rails'
+  gem "factory_bot_rails"
   gem 'selenium-webdriver'
   gem 'webdrivers'
   gem 'webmock'
