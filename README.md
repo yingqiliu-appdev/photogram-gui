@@ -6,7 +6,7 @@ We'll also build some forms to add records to tables.
 
 ## Domain model
 
-Here is a diagram of the database you have to work with:
+There's an image of the ERD of the database you have to work with in the root-level folder of the application, `erd.png`.
 
 ![Domain Model](erd.png?raw=true "Domain Model")
 
