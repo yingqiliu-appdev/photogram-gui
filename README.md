@@ -4,7 +4,13 @@ In this project, we'll practice populating pages with data from a database.
 
 We'll also build some forms to add records to tables.
 
-## Schema
+## Domain model
+
+Here is a diagram of the database you have to work with:
+
+![Domain Model](erd.png?raw=true "Domain Model")
+
+You can also check out the comments at the top of each of your models in `app/models` to remind yourself of what columns it has.
 
 ## Target
 
@@ -25,7 +31,7 @@ The required tasks are:
     - displays the comments that have been made on the photo
     - have a form to add a comment to the photo
 
-## Standard Workflow
+## Workflow
 
  1. Start the web server: `bin/server`
  1. As often as you like, reset your database with dummy data: `rails dummy_data`
@@ -33,14 +39,12 @@ The required tasks are:
 
 ## Things to keep in mind
 
+  - I added some _validations_, rules to try and help prevent bogus data from entering your tables, to your models. We'll discuss these next week.
+ - Don't be alarmed by the number of automated tests. Most of them are there as hints to help you structure your forms correctly.
+ - It's okay to View Source on the target to get hints on what HTML we used.
  - When you make forms, don't forget to add a `<label>` for every form control (`<input>`, `<textarea>`, etc). The `<label>` should have a `for=""` attribute that matches the `id=""` attribute of the input. For example,
 
     ```html
     <label for="zebra">Fan</label>
     <input id="zebra" type="text" name="qs_fan_id">
     ```
-
-    This lets the browser know which label belongs to which input, which helps with [accessibility](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/What_is_accessibility), ergonomics, SEO, and most importantly for you right now — automated tests.
- - I added some _validations_, rules to try and help prevent bogus data from entering your tables, to your models. We'll discuss these next week.
- - Don't be alarmed by the number of automated tests. Most of them are there as hints to help you structure your forms correctly.
- - It's okay to View Source on the target to get hints on what HTML we used.
