@@ -14,7 +14,7 @@ You can also check out the comments at the top of each of your models in `app/mo
 
 ## Target
 
-[Here's your target.](https://photogram-gui.matchthetarget.com/) Not all parts are required for now; in particular, the edit forms are optional challenges.
+[Here's your target.](https://photogram-gui.matchthetarget.com/) Not all parts are required for now; in particular, the edit forms are optional challenges. You've got the all tools needed, but there are quite a few moving parts; we can finish them together.
 
 The required tasks are:
 
