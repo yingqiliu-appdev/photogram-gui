@@ -59,6 +59,7 @@ group :development do
   gem 'letter_opener'
   gem 'meta_request'
   gem 'rails_db', '2.3.1'
+  gem 'rails-erd'
 end
 
 group :test do

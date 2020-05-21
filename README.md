@@ -4,6 +4,8 @@ In this project, we'll practice populating pages with data from a database.
 
 We'll also build some forms to add records to tables.
 
+## Schema
+
 ## Target
 
 [Here's your target.](https://photogram-gui.matchthetarget.com/) Not all parts are required for now; in particular, the edit forms are optional challenges.
@@ -39,6 +41,6 @@ The required tasks are:
     ```
 
     This lets the browser know which label belongs to which input, which helps with [accessibility](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/What_is_accessibility), ergonomics, SEO, and most importantly for you right now — automated tests.
- - I added some validations to try and help prevent bogus data from entering your tables. Check them out in your models.
+ - I added some _validations_, rules to try and help prevent bogus data from entering your tables, to your models. We'll discuss these next week.
  - Don't be alarmed by the number of automated tests. Most of them are there as hints to help you structure your forms correctly.
  - It's okay to View Source on the target to get hints on what HTML we used.
