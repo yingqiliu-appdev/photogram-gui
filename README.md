@@ -1,26 +1,32 @@
 # Photogram GUI
 
-In this project, you will add a GUI on top of the queries we previously built.
+In this project, we'll practice populating pages with data from a database.
 
-### [Here's your target.](https://photogram-gui.matchthetarget.com/)
+We'll also build some forms to add records to tables.
 
- - A list of users (at `/users`).
-   - A form to add a new user.
- - A details page for a user (at `/users/[USERNAME]`).
-   - A form to edit a user.
-   - A list of the user's own photos.
- - A list of photos (at `/photos`).
-   - A form to add a new photo.
- - A details page for a photo (at `/photos/[ID NUMBER]`).
-   - A form to edit a photo.
-   - A link to delete a photo.
-   - A comment section.
-   - A form to add a new comment.
+## Target
+
+[Here's your target.](https://photogram-gui.matchthetarget.com/) Not all parts are required for now; in particular, the edit forms are optional challenges.
+
+The required tasks are:
+
+ - `/users` should
+    - display all the users
+    - a link to get to details for each user
+    - a form to add a new user
+ - `/users/[USERNAME]` should
+    - display the username of the user
+    - the photos posted by the user
+ - `/photos` should have a form to add a new photo
+ - `/photos/[ID]` should
+    - display the details of a photo
+    - displays the comments that have been made on the photo
+    - have a form to add a comment to the photo
 
 ## Standard Workflow
 
  1. Start the web server: `bin/server`
- 1. As often as you like, reset your database with dummy data: `rails dev:prime`
+ 1. As often as you like, reset your database with dummy data: `rails dummy_data`
  2. Run `rails grade` as often as you like to see how you are doing, but **test your app manually first to make sure it matches the target's behavior**.
 
 ## Things to keep in mind
