@@ -33,9 +33,11 @@ The required tasks are:
 
 ## Workflow
 
- 1. Start the web server: `bin/server`
  1. As often as you like, reset your database with dummy data: `rails dummy_data`
- 2. Run `rails grade` as often as you like to see how you are doing, but **test your app manually first to make sure it matches the target's behavior**.
+ 2. Start the web server: `bin/server`
+ 3. **A**lways **B**e **C**ommitting at `/git`
+ 4. Check out your database visually at `/rails/db`
+ 5. Run `rails grade` as often as you like to see how you are doing, but **test your app manually first to make sure it matches the target's behavior**.
 
 ## Things to keep in mind
 
