@@ -155,39 +155,39 @@ describe "/users/[username]" do
   end
 end
 
-# describe "/users/[username]" do
-#   it "has a label for 'Username', with text: 'Username'", :points => 1, hint: h("copy_must_match label_for_input") do
-#     user = User.new
-#     user.username = "alice_#{rand(100)}"
-#     user.save
-#     visit "/users/#{user.username}"
+describe "/users/[username]" do
+  it "has a label for 'Username', with text: 'Username'", :points => 1, hint: h("copy_must_match label_for_input") do
+    user = User.new
+    user.username = "alice_#{rand(100)}"
+    user.save
+    visit "/users/#{user.username}"
 
-#     expect(page).to have_css("label", text: "Username")
-#   end
-# end
+    expect(page).to have_css("label", text: "Username")
+  end
+end
 
-# describe "/users/[username]" do
-#   it "has a button with text, 'Update user'", :points => 1, hint: h("label_for_input") do
-#     user = User.new
-#     user.username = "alice_#{rand(100)}"
-#     user.save
-#     visit "/users/#{user.username}"
+describe "/users/[username]" do
+  it "has a button with text, 'Update user'", :points => 1, hint: h("label_for_input") do
+    user = User.new
+    user.username = "alice_#{rand(100)}"
+    user.save
+    visit "/users/#{user.username}"
 
-#     expect(page).to have_css("button", text: "Update user")
-#   end
-# end
+    expect(page).to have_css("button", text: "Update user")
+  end
+end
 
-# describe "/users/[username]" do
-#   it "has username prepopulated in an input element", :points => 1, hint: h("value_attribute") do
-#     user = User.new
-#     user.username = "dannydevito4twenty"
-#     user.save
+describe "/users/[username]" do
+  it "has username prepopulated in an input element", :points => 1, hint: h("value_attribute") do
+    user = User.new
+    user.username = "dannydevito4twenty"
+    user.save
 
-#     visit "/users/#{user.username}"
+    visit "/users/#{user.username}"
 
-#     expect(page).to have_css("input[value='dannydevito4twenty']")
-#   end
-# end
+    expect(page).to have_css("input[value='dannydevito4twenty']")
+  end
+end
 
 
 describe "/users/[USERNAME]" do
@@ -228,34 +228,34 @@ describe "/users/[USERNAME]" do
   end
 end
 
-# describe "/users/[USERNAME]" do
-#   it "Update user form updates username when submitted", :points => 3, hint: h("label_for_input button_type") do
-#     user = User.new
-#     user.username = "jeff_b_is_evil"
-#     user.save
+describe "/users/[USERNAME]" do
+  it "Update user form updates username when submitted", :points => 3, hint: h("label_for_input button_type") do
+    user = User.new
+    user.username = "jeff_b_is_evil"
+    user.save
 
-#     test_username = "new_user"
+    test_username = "new_user"
 
-#     visit "/users/#{user.username}"
-#     fill_in "Username", with: test_username
-#     click_on "Update user"
+    visit "/users/#{user.username}"
+    fill_in "Username", with: test_username
+    click_on "Update user"
 
-#     user_as_revised = User.where({:id => user.id}).first
+    user_as_revised = User.where({:id => user.id}).first
 
-#     expect(user_as_revised.username).to eq(test_username)
-#   end
-# end
+    expect(user_as_revised.username).to eq(test_username)
+  end
+end
 
 
-# describe "/users/[USERNAME]" do
-#   it "Update user form redirects to /users/[USERNAME] page", :points => 1, hint: h("embed_vs_interpolate redirect_vs_render") do
-#     user = User.new
-#     user.username = "alice_#{rand(100)}"
-#     user.save
+describe "/users/[USERNAME]" do
+  it "Update user form redirects to /users/[USERNAME] page", :points => 1, hint: h("embed_vs_interpolate redirect_vs_render") do
+    user = User.new
+    user.username = "alice_#{rand(100)}"
+    user.save
 
-#     visit "/users/#{user.username}"
-#     click_on "Update user"
+    visit "/users/#{user.username}"
+    click_on "Update user"
 
-#     expect(page).to have_current_path("/users/#{user.username}")
-#   end
-# end
+    expect(page).to have_current_path("/users/#{user.username}")
+  end
+end
